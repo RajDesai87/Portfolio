@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.9);
+  --surface-hover: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --border-glass: rgba(226, 232, 240, 0.95);
+  --accent-from: #0d9488;
+  --accent-via: #0284c7;
+  --accent-to: #6366f1;
+  --accent-glow: rgba(13, 148, 136, 0.14);
+  --grid-line: rgba(15, 23, 42, 0.035);
+}
+
+.dark {
+  --bg: #0b0f19;
+  --bg-subtle: #111726;
+  --surface: #131b2e;
+  --surface-glass: rgba(19, 27, 46, 0.9);
+  --surface-hover: #1a243d;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: #1e293b;
+  --border-glass: rgba(30, 41, 59, 0.9);
+  --accent-from: #2dd4bf;
+  --accent-via: #38bdf8;
+  --accent-to: #818cf8;
+  --accent-glow: rgba(45, 212, 191, 0.16);
+  --grid-line: rgba(255, 255, 255, 0.03);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+/* Subtle background grid */
+.bg-grid-pattern {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+/* Frosted glass panel with clean border */
+.glass-panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+}
+
+/* Gradient typography */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-from), var(--accent-via), var(--accent-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card interactive hover effect with gentle lift */
+.card-interactive {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 40px -12px rgba(0, 0, 0, 0.15),
+    0 0 28px -4px var(--accent-glow);
+}
+
+/* Accessible focus states */
+:focus-visible {
+  outline: 2px solid var(--accent-from);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--accent-from) 35%, transparent);
+  color: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-from);
+}
+
+/* Cursor Blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+/* Ambient Pulse Animation */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.04); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 7s ease-in-out infinite;
+}
+
+/* Syntax Highlighting */
+.json-key {
+  color: var(--accent-from);
+}
+
+.json-string {
+  color: var(--accent-via);
+}
+
+.json-bracket {
+  color: var(--text-muted);
+}
+
+/* Diff Callout Blocks */
+.diff-removed {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.08);
+  border-left: 2px solid #ef4444;
+  display: block;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.diff-added {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.08);
+  border-left: 2px solid #10b981;
+  display: block;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
