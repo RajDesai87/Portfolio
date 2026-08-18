@@ -1,39 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f8fafc;
-  --bg-subtle: #f1f5f9;
-  --surface: #ffffff;
-  --surface-glass: rgba(255, 255, 255, 0.9);
-  --surface-hover: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
-  --border-glass: rgba(226, 232, 240, 0.95);
-  --accent-from: #0d9488;
-  --accent-via: #0284c7;
-  --accent-to: #6366f1;
-  --accent-glow: rgba(13, 148, 136, 0.14);
-  --grid-line: rgba(15, 23, 42, 0.035);
-}
-
-.dark {
   --bg: #0b0f19;
   --bg-subtle: #111726;
   --surface: #131b2e;
-  --surface-glass: rgba(19, 27, 46, 0.9);
+  --surface-glass: rgba(19, 27, 46, 0.88);
   --surface-hover: #1a243d;
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   --border: #1e293b;
   --border-glass: rgba(30, 41, 59, 0.9);
   --accent-from: #2dd4bf;
   --accent-via: #38bdf8;
   --accent-to: #818cf8;
   --accent-glow: rgba(45, 212, 191, 0.16);
-  --grid-line: rgba(255, 255, 255, 0.03);
+  --grid-line: rgba(255, 255, 255, 0.035);
 }
 
 html {
@@ -159,13 +141,42 @@ body {
   border-radius: 6px;
 }
 
-.diff-added {
-  color: #10b981;
-  background-color: rgba(16, 185, 129, 0.08);
-  border-left: 2px solid #10b981;
-  display: block;
-  padding: 6px 14px;
-  border-radius: 6px;
+/* Terminal Button & Cursor Hover Motif */
+.terminal-btn {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminal-btn .terminal-prompt-prefix {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.terminal-btn:hover .terminal-prompt-prefix,
+.terminal-btn:focus-visible .terminal-prompt-prefix {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.terminal-btn .terminal-cursor-indicator {
+  display: inline-block;
+  opacity: 0;
+  animation: blink 0.9s step-end infinite;
+  transition: opacity 0.15s ease;
+}
+
+.terminal-btn:hover .terminal-cursor-indicator,
+.terminal-btn:focus-visible .terminal-cursor-indicator {
+  opacity: 1;
+}
+
+/* Side gutter matrix/canvas container */
+.gutter-canvas-container {
+  pointer-events: none;
+  opacity: 0.28;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
 }
 
 @media (prefers-reduced-motion: reduce) {

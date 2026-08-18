@@ -9,6 +9,8 @@ const projectsList: ProjectData[] = [
     title: "Mind Compass AI — AI-Powered Wellness Platform",
     badge: "Full-Stack • Team Project",
     featured: false,
+    image: "/projects/mind-compass.svg",
+    imageAlt: "Mind Compass AI Wellness Platform Dashboard with Sentiment Analytics",
     stack: [
       "Django REST Framework",
       "PostgreSQL",
@@ -35,6 +37,8 @@ const projectsList: ProjectData[] = [
     title: "Discussion-Den — Community Discussion Platform",
     badge: "3-Tier Backend • Group Project",
     featured: false,
+    image: "/projects/discussion-den.svg",
+    imageAlt: "Discussion-Den Community Discussion Forum with 3-Tier Architecture",
     stack: [
       "Python",
       "Flask",
@@ -59,6 +63,8 @@ const projectsList: ProjectData[] = [
     title: "Stock Sentiment RAG & ML Prediction Dashboard",
     badge: "Flagship ML & Vector RAG • Solo Project",
     featured: true,
+    image: "/projects/stock-rag.svg",
+    imageAlt: "Stock Sentiment RAG & ML Prediction Dashboard with FAISS and Groq LLM",
     stack: [
       "Python",
       "scikit-learn",

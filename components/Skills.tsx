@@ -197,7 +197,7 @@ export default function Skills() {
               <button
                 type="button"
                 onClick={handleCopyJson}
-                className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 py-2 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-colors cursor-pointer"
+                className="terminal-btn group inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 py-2 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-colors cursor-pointer"
                 aria-label="Copy JSON code"
               >
                 {copied ? (
@@ -207,8 +207,10 @@ export default function Skills() {
                   </>
                 ) : (
                   <>
+                    <span className="terminal-prompt-prefix text-[var(--accent-from)] font-bold">❯</span>
                     <Copy size={14} />
                     <span>Copy JSON</span>
+                    <span className="terminal-cursor-indicator text-[var(--accent-from)] font-bold">▍</span>
                   </>
                 )}
               </button>

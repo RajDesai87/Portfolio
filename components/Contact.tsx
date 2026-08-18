@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Copy, Check, Download, ArrowUpRight, Send } from "lucide-react";
+import { Mail, MapPin, Copy, Check, ExternalLink, ArrowUpRight, Send } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 
 const PRIMARY_EMAIL = "rajgpdesai2007@gmail.com";
@@ -115,24 +115,29 @@ export default function Contact() {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <a
                 href={`mailto:${PRIMARY_EMAIL}`}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-[#0B0E14] shadow-xl shadow-[var(--accent-from)]/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                className="terminal-btn group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-[#0B0E14] shadow-xl shadow-[var(--accent-from)]/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                 style={{
                   background:
                     "linear-gradient(135deg, var(--accent-from), var(--accent-via), var(--accent-to))",
                 }}
               >
+                <span className="terminal-prompt-prefix font-mono font-bold select-none text-[#0B0E14]">❯</span>
                 <Send size={18} />
                 <span>Send Email</span>
+                <span className="terminal-cursor-indicator font-mono font-bold select-none text-[#0B0E14]">▍</span>
               </a>
 
-              {/* Note: Drop your resume PDF into /public/resume.pdf */}
+              {/* View Resume in new tab */}
               <a
                 href="/resume.pdf"
-                download
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-base border border-[var(--border)] bg-[var(--bg)] text-[var(--text-primary)] hover:border-[var(--accent-from)] hover:text-[var(--accent-from)] transition-all shadow-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="terminal-btn group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-base border border-[var(--border)] bg-[var(--bg)] text-[var(--text-primary)] hover:border-[var(--accent-from)] hover:text-[var(--accent-from)] transition-all shadow-sm cursor-pointer"
               >
-                <Download size={18} />
-                <span>Download Resume</span>
+                <span className="terminal-prompt-prefix font-mono font-bold select-none text-[var(--accent-from)]">❯</span>
+                <ExternalLink size={18} />
+                <span>View Resume</span>
+                <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-from)]">▍</span>
               </a>
             </div>
           </motion.div>

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dd-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b101e"/>
+      <stop offset="50%" stop-color="#0f1629"/>
+      <stop offset="100%" stop-color="#141c33"/>
+    </linearGradient>
+    <linearGradient id="dd-accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="dd-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#dd-bg)"/>
+  
+  <!-- Ambient Glow Orbs -->
+  <circle cx="1050" cy="150" r="200" fill="#38bdf8" opacity="0.08" filter="url(#dd-glow)"/>
+  <circle cx="150" cy="500" r="180" fill="#818cf8" opacity="0.08" filter="url(#dd-glow)"/>
+
+  <!-- Top App Window Bar -->
+  <rect x="40" y="30" width="1120" height="46" rx="14" fill="#131d33" stroke="#1e2d4d" stroke-width="1.5"/>
+  <circle cx="68" cy="53" r="6" fill="#ef4444" opacity="0.85"/>
+  <circle cx="88" cy="53" r="6" fill="#eab308" opacity="0.85"/>
+  <circle cx="108" cy="53" r="6" fill="#22c55e" opacity="0.85"/>
+  
+  <rect x="440" y="40" width="320" height="26" rx="6" fill="#0b1120" stroke="#1e293b"/>
+  <text x="600" y="58" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="middle">disden.vercel.app/feed</text>
+  <rect x="1020" y="42" width="110" height="22" rx="6" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3"/>
+  <text x="1075" y="57" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="10" font-weight="bold" text-anchor="middle">FLASK 3-TIER</text>
+
+  <!-- Main Container -->
+  <g transform="translate(40, 95)">
+    
+    <!-- Left Sidebar: Channels & Communities -->
+    <rect x="0" y="0" width="280" height="525" rx="20" fill="#131d33" stroke="#1e2d4d" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#f8fafc" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="bold">Communities</text>
+    <rect x="200" y="24" width="56" height="20" rx="6" fill="#1e293b"/>
+    <text x="228" y="38" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">12 total</text>
+
+    <!-- Channel 1 (Active) -->
+    <rect x="14" y="60" width="252" height="42" rx="10" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <text x="32" y="86" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="13" font-weight="bold"># backend-engineering</text>
+
+    <!-- Channel 2 -->
+    <rect x="14" y="110" width="252" height="42" rx="10" fill="#0b1120" stroke="#1e293b"/>
+    <text x="32" y="136" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13"># python-async-patterns</text>
+
+    <!-- Channel 3 -->
+    <rect x="14" y="160" width="252" height="42" rx="10" fill="#0b1120" stroke="#1e293b"/>
+    <text x="32" y="186" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13"># postgresql-indexing</text>
+
+    <!-- Channel 4 -->
+    <rect x="14" y="210" width="252" height="42" rx="10" fill="#0b1120" stroke="#1e293b"/>
+    <text x="32" y="236" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13"># system-design-hub</text>
+
+    <!-- Architecture Blueprint Box -->
+    <rect x="14" y="280" width="252" height="225" rx="14" fill="#0b1120" stroke="#1e2d4d"/>
+    <text x="28" y="310" fill="#f8fafc" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="bold">3-Tier Flask Architecture</text>
+    
+    <rect x="28" y="325" width="224" height="34" rx="8" fill="#131e36" stroke="#38bdf8" stroke-opacity="0.4"/>
+    <text x="140" y="347" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold" text-anchor="middle">Presentation Tier (Blueprints)</text>
+    
+    <rect x="28" y="368" width="224" height="34" rx="8" fill="#131e36" stroke="#818cf8" stroke-opacity="0.4"/>
+    <text x="140" y="390" fill="#818cf8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold" text-anchor="middle">Service Tier (Authlib + RateLimit)</text>
+
+    <rect x="28" y="411" width="224" height="34" rx="8" fill="#131e36" stroke="#2dd4bf" stroke-opacity="0.4"/>
+    <text x="140" y="433" fill="#2dd4bf" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold" text-anchor="middle">Data Tier (SQLAlchemy + Postgres)</text>
+
+    <text x="140" y="475" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">DB Latency: 8ms • CSRF Protected</text>
+
+    <!-- Right Side Feed -->
+    <g transform="translate(304, 0)">
+      <!-- Post 1 (Featured) -->
+      <rect x="0" y="0" width="816" height="250" rx="20" fill="#131d33" stroke="#1e2d4d" stroke-width="1.5"/>
+      
+      <!-- Upvote Pill -->
+      <rect x="24" y="24" width="46" height="85" rx="10" fill="#0b1120" stroke="#1e2e4e"/>
+      <path d="M 47 40 L 37 54 L 57 54 Z" fill="#38bdf8"/>
+      <text x="47" y="76" fill="#f8fafc" font-family="JetBrains Mono, monospace" font-size="14" font-weight="bold" text-anchor="middle">142</text>
+      <path d="M 47 98 L 37 86 L 57 86 Z" fill="#64748b"/>
+
+      <!-- Post Header Info -->
+      <text x="86" y="44" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="12" font-weight="bold">r/backend-engineering</text>
+      <text x="260" y="44" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">• Posted by @raj_desai 2 hours ago</text>
+      
+      <!-- Post Title -->
+      <text x="86" y="80" fill="#f8fafc" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="bold">
+        Benchmarking SQLAlchemy ORM vs Raw Asyncpg in PostgreSQL
+      </text>
+
+      <!-- Post Body Snippet -->
+      <text x="86" y="115" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="14" leading="1.6">
+        Here is how we optimized nested thread querying using composite indexing and selective eager loading...
+      </text>
+
+      <!-- Code Snippet inside Post -->
+      <rect x="86" y="135" width="706" height="50" rx="8" fill="#0b1120" stroke="#1e293b"/>
+      <text x="106" y="165" fill="#2dd4bf" font-family="JetBrains Mono, monospace" font-size="12">
+        db.session.query(Post).options(joinedload(Post.comments)).filter(Post.is_active == True)
+      </text>
+
+      <!-- Post Footer Badges -->
+      <g transform="translate(86, 200)">
+        <rect x="0" y="0" width="130" height="30" rx="8" fill="#0b1120" stroke="#1e293b"/>
+        <text x="65" y="20" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">💬 38 Comments</text>
+
+        <rect x="142" y="0" width="110" height="30" rx="8" fill="#0b1120" stroke="#1e293b"/>
+        <text x="197" y="20" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">🔗 Share Link</text>
+
+        <rect x="264" y="0" width="120" height="30" rx="8" fill="#0b1120" stroke="#1e293b"/>
+        <text x="324" y="20" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">🔖 Saved Post</text>
+      </g>
+
+      <!-- Post 2 (Nested Community Thread) -->
+      <rect x="0" y="270" width="816" height="255" rx="20" fill="#131d33" stroke="#1e2d4d" stroke-width="1.5"/>
+      
+      <rect x="24" y="294" width="46" height="85" rx="10" fill="#0b1120" stroke="#1e2e4e"/>
+      <path d="M 47 310 L 37 324 L 57 324 Z" fill="#818cf8"/>
+      <text x="47" y="346" fill="#f8fafc" font-family="JetBrains Mono, monospace" font-size="14" font-weight="bold" text-anchor="middle">89</text>
+      <path d="M 47 368 L 37 356 L 57 356 Z" fill="#64748b"/>
+
+      <text x="86" y="314" fill="#818cf8" font-family="JetBrains Mono, monospace" font-size="12" font-weight="bold">r/python-async-patterns</text>
+      <text x="280" y="314" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">• Posted 4 hours ago</text>
+
+      <text x="86" y="348" fill="#f8fafc" font-family="Space Grotesk, sans-serif" font-size="18" font-weight="bold">
+        Session Isolation &amp; Persona Switching with Flask-Login and Google OAuth 2.0
+      </text>
+
+      <!-- Nested Comment Box -->
+      <rect x="86" y="375" width="706" height="80" rx="10" fill="#0b1120" stroke="#1e2d4d"/>
+      <line x1="106" y1="390" x2="106" y2="440" stroke="#38bdf8" stroke-width="2"/>
+      <text x="120" y="408" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold">@alex_dev • Lead Engineer</text>
+      <text x="120" y="430" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="12">
+        &ldquo;The modular blueprint routing keeps our controller layer completely decoupled.&rdquo;
+      </text>
+
+      <g transform="translate(86, 470)">
+        <rect x="0" y="0" width="130" height="30" rx="8" fill="#0b1120" stroke="#1e293b"/>
+        <text x="65" y="20" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">💬 19 Comments</text>
+      </g>
+    </g>
+  </g>
+</svg>

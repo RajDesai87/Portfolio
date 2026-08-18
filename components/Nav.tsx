@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ThemeToggle from "./ThemeToggle";
 import { Menu, X, Terminal } from "lucide-react";
 
 const navLinks = [
@@ -23,13 +22,22 @@ export default function Nav() {
       setScrolled(window.scrollY > 20);
 
       const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el && window.scrollY + 200 >= el.offsetTop) {
-          setActive(sectionIds[i]);
-          break;
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+        setActive("contact");
+        return;
+      }
+
+      let current = "home";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.42) {
+            current = id;
+          }
         }
       }
+      setActive(current);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -89,13 +97,14 @@ export default function Nav() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                  className={`group relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 terminal-btn ${
                     isActive
                       ? "text-[var(--text-primary)] font-semibold"
                       : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]"
                   }`}
                 >
-                  {link.label}
+                  <span className="terminal-prompt-prefix text-[var(--accent-from)] font-mono text-xs mr-1 select-none font-bold">❯</span>
+                  <span>{link.label}</span>
                   {isActive && (
                     <span
                       className="absolute inset-0 rounded-full -z-10 bg-gradient-to-r from-[var(--accent-from)]/15 via-[var(--accent-via)]/15 to-[var(--accent-to)]/15 border border-[var(--accent-from)]/35 shadow-xs"
@@ -108,7 +117,11 @@ export default function Nav() {
 
           {/* Right Controls */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
+            {/* Terminal Status Tag */}
+            <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-3 py-1.5 rounded-full select-none">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>bash</span>
+            </div>
 
             {/* Mobile hamburger */}
             <button

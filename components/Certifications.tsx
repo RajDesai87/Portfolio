@@ -86,8 +86,10 @@ export default function Certifications() {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-[var(--border)]/60 flex items-center justify-end font-mono text-xs sm:text-sm text-[var(--accent-via)] font-semibold group-hover:underline gap-1.5">
+            <div className="pt-4 border-t border-[var(--border)]/60 flex items-center justify-end font-mono text-xs sm:text-sm text-[var(--accent-via)] font-semibold gap-1.5 terminal-btn">
+              <span className="terminal-prompt-prefix font-mono font-bold select-none text-[var(--accent-from)]">❯</span>
               <span>View Credential</span>
+              <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-from)]">▍</span>
               <ExternalLink size={13} />
             </div>
           </motion.a>

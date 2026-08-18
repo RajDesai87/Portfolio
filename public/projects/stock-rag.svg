@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sr-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09111e"/>
+      <stop offset="50%" stop-color="#0d1829"/>
+      <stop offset="100%" stop-color="#11223b"/>
+    </linearGradient>
+    <linearGradient id="sr-chart-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="40%" stop-color="#2dd4bf"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="sr-area-green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="sr-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#sr-bg)"/>
+  
+  <!-- Subtle Grid Overlay -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+  </g>
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="850" cy="180" r="220" fill="#10b981" opacity="0.08" filter="url(#sr-glow)"/>
+  <circle cx="300" cy="480" r="180" fill="#38bdf8" opacity="0.08" filter="url(#sr-glow)"/>
+
+  <!-- Top App Window Bar -->
+  <rect x="40" y="30" width="1120" height="46" rx="14" fill="#131d33" stroke="#1e2d4d" stroke-width="1.5"/>
+  <circle cx="68" cy="53" r="6" fill="#ef4444" opacity="0.85"/>
+  <circle cx="88" cy="53" r="6" fill="#eab308" opacity="0.85"/>
+  <circle cx="108" cy="53" r="6" fill="#22c55e" opacity="0.85"/>
+  
+  <rect x="420" y="40" width="360" height="26" rx="6" fill="#0b1120" stroke="#1e293b"/>
+  <text x="600" y="58" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="middle">stock-rag-ml.streamlit.app [FAISS+GROQ]</text>
+  <rect x="1010" y="42" width="120" height="22" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.3"/>
+  <text x="1070" y="57" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="10" font-weight="bold" text-anchor="middle">VECTOR RAG ML</text>
+
+  <!-- Main Container -->
+  <g transform="translate(40, 95)">
+    
+    <!-- Top Ticker Selector & Model Stats Bar -->
+    <rect x="0" y="0" width="1120" height="75" rx="16" fill="#131e36" stroke="#1e2e4e" stroke-width="1.5"/>
+    
+    <!-- Tickers Chips -->
+    <g transform="translate(24, 18)">
+      <rect x="0" y="0" width="80" height="38" rx="10" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
+      <text x="40" y="24" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="13" font-weight="bold" text-anchor="middle">NVDA</text>
+
+      <rect x="92" y="0" width="80" height="38" rx="10" fill="#0b1120" stroke="#1e293b"/>
+      <text x="132" y="24" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">AAPL</text>
+
+      <rect x="184" y="0" width="80" height="38" rx="10" fill="#0b1120" stroke="#1e293b"/>
+      <text x="224" y="24" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">MSFT</text>
+
+      <rect x="276" y="0" width="80" height="38" rx="10" fill="#0b1120" stroke="#1e293b"/>
+      <text x="316" y="24" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">TSLA</text>
+
+      <rect x="368" y="0" width="80" height="38" rx="10" fill="#0b1120" stroke="#1e293b"/>
+      <text x="408" y="24" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">GOOGL</text>
+    </g>
+
+    <!-- Model Stats on Right of Top Bar -->
+    <g transform="translate(560, 18)">
+      <rect x="0" y="0" width="165" height="38" rx="10" fill="#0b1120" stroke="#1e2e4e"/>
+      <text x="82" y="16" fill="#94a3b8" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">XGBOOST PREDICTION</text>
+      <text x="82" y="32" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="13" font-weight="bold" text-anchor="middle">▲ BULLISH (74.2%)</text>
+
+      <rect x="180" y="0" width="175" height="38" rx="10" fill="#0b1120" stroke="#1e2e4e"/>
+      <text x="267" y="16" fill="#94a3b8" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">FAISS VECTOR MATCH</text>
+      <text x="267" y="32" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="13" font-weight="bold" text-anchor="middle">Cosine Sim: 0.892</text>
+
+      <rect x="370" y="0" width="165" height="38" rx="10" fill="#0b1120" stroke="#1e2e4e"/>
+      <text x="452" y="16" fill="#94a3b8" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">DATA LEAKAGE FIX</text>
+      <text x="452" y="32" fill="#2dd4bf" font-family="JetBrains Mono, monospace" font-size="13" font-weight="bold" text-anchor="middle">Chronological Split ✓</text>
+    </g>
+
+    <!-- Chart & Prediction Panel (Left) -->
+    <rect x="0" y="95" width="690" height="430" rx="20" fill="#131d33" stroke="#1e2d4d" stroke-width="1.5"/>
+    <text x="30" y="135" fill="#f8fafc" font-family="Space Grotesk, sans-serif" font-size="18" font-weight="bold">NVDA Price Action &amp; NLP Sentiment Index</text>
+    <text x="30" y="157" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="12">Groq Llama-3 Sentiment Score Combined with RSI + MACD Technicals</text>
+
+    <!-- Candlestick / Graph Area -->
+    <line x1="30" y1="200" x2="660" y2="200" stroke="#1e293b" stroke-dasharray="4,4"/>
+    <line x1="30" y1="270" x2="660" y2="270" stroke="#1e293b" stroke-dasharray="4,4"/>
+    <line x1="30" y1="340" x2="660" y2="340" stroke="#1e293b" stroke-dasharray="4,4"/>
+    <line x1="30" y1="410" x2="660" y2="410" stroke="#1e293b" stroke-dasharray="4,4"/>
+
+    <!-- Candlestick Bars Simulation -->
+    <g stroke-width="1.5">
+      <!-- Candle 1 -->
+      <line x1="80" y1="310" x2="80" y2="370" stroke="#10b981"/>
+      <rect x="73" y="325" width="14" height="32" rx="2" fill="#10b981"/>
+
+      <!-- Candle 2 -->
+      <line x1="140" y1="290" x2="140" y2="360" stroke="#10b981"/>
+      <rect x="133" y="300" width="14" height="45" rx="2" fill="#10b981"/>
+
+      <!-- Candle 3 (Red) -->
+      <line x1="200" y1="310" x2="200" y2="380" stroke="#ef4444"/>
+      <rect x="193" y="325" width="14" height="38" rx="2" fill="#ef4444"/>
+
+      <!-- Candle 4 -->
+      <line x1="260" y1="260" x2="260" y2="340" stroke="#10b981"/>
+      <rect x="253" y="275" width="14" height="50" rx="2" fill="#10b981"/>
+
+      <!-- Candle 5 -->
+      <line x1="320" y1="240" x2="320" y2="310" stroke="#10b981"/>
+      <rect x="313" y="250" width="14" height="40" rx="2" fill="#10b981"/>
+
+      <!-- Candle 6 (Red) -->
+      <line x1="380" y1="270" x2="380" y2="330" stroke="#ef4444"/>
+      <rect x="373" y="280" width="14" height="35" rx="2" fill="#ef4444"/>
+
+      <!-- Candle 7 -->
+      <line x1="440" y1="210" x2="440" y2="290" stroke="#10b981"/>
+      <rect x="433" y="225" width="14" height="52" rx="2" fill="#10b981"/>
+
+      <!-- Candle 8 -->
+      <line x1="500" y1="190" x2="500" y2="260" stroke="#10b981"/>
+      <rect x="493" y="200" width="14" height="48" rx="2" fill="#10b981"/>
+    </g>
+
+    <!-- Sentiment Prediction Curve Overlay -->
+    <path d="M 50 360 Q 150 340, 240 310 T 380 270 T 520 220 T 650 170 L 650 460 L 50 460 Z" fill="url(#sr-area-green)"/>
+    <path d="M 50 360 Q 150 340, 240 310 T 380 270 T 520 220 T 650 170" fill="none" stroke="url(#sr-chart-grad)" stroke-width="4" filter="url(#sr-glow)"/>
+
+    <!-- Prediction Badge Tag -->
+    <rect x="480" y="125" width="170" height="46" rx="8" fill="#0b1120" stroke="#10b981" stroke-width="1.5"/>
+    <text x="565" y="143" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold" text-anchor="middle">Next Day Direction: ▲ UP</text>
+    <text x="565" y="159" fill="#94a3b8" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Accuracy: 64.8% on Holdout</text>
+
+    <!-- Vector RAG Q&A Assistant (Right) -->
+    <rect x="714" y="95" width="406" height="430" rx="20" fill="#131d33" stroke="#1e2d4d" stroke-width="1.5"/>
+    <text x="740" y="135" fill="#f8fafc" font-family="Space Grotesk, sans-serif" font-size="18" font-weight="bold">FAISS Vector Search &amp; LLM RAG</text>
+
+    <!-- Vector Match Snippet -->
+    <rect x="740" y="160" width="354" height="95" rx="12" fill="#0b1120" stroke="#1e2e4e"/>
+    <text x="758" y="184" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold">Vector Query Match (FAISS Index)</text>
+    <text x="758" y="206" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="12">
+      &ldquo;NVIDIA reports datacenter GPU revenue acceleration across Q3...&rdquo;
+    </text>
+    <text x="758" y="235" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="10">Source: Reuters • Embedding: sentence-transformers</text>
+
+    <!-- Grounded LLM Response -->
+    <rect x="740" y="270" width="354" height="150" rx="12" fill="#0b1120" stroke="#10b981" stroke-opacity="0.5"/>
+    <text x="758" y="296" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold">Groq LLM Synthesis</text>
+    <text x="758" y="322" fill="#f8fafc" font-family="Inter, sans-serif" font-size="12" leading="1.5">
+      The FAISS retrieval identifies strong positive guidance in server hardware sales. Combined with RSI (58.4) and MACD positive histogram, the multi-model ensemble predicts upward price momentum.
+    </text>
+    <rect x="758" y="380" width="130" height="24" rx="6" fill="#10b981" fill-opacity="0.15"/>
+    <text x="823" y="396" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="10" font-weight="bold" text-anchor="middle">Grounded • 0 Hallucination</text>
+
+    <!-- Terminal Command Bar in Widget -->
+    <rect x="740" y="435" width="354" height="65" rx="10" fill="#090e1a" stroke="#1e293b"/>
+    <text x="758" y="460" fill="#2dd4bf" font-family="JetBrains Mono, monospace" font-size="11">$ python -m rag.predict --ticker NVDA</text>
+    <text x="758" y="482" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="10">[OK] FAISS Index loaded (12,450 chunks) in 42ms</text>
+  </g>
+</svg>

@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink, Sparkles, Terminal, ShieldAlert } from "lucide-react";
+import { ExternalLink, Sparkles, Terminal, ShieldAlert, Globe } from "lucide-react";
 import { GithubIcon } from "./Icons";
 
 export interface ProjectData {
@@ -9,6 +10,8 @@ export interface ProjectData {
   title: string;
   badge: string;
   featured?: boolean;
+  image?: string;
+  imageAlt?: string;
   stack: string[];
   description: string[];
   githubUrl?: string;
@@ -28,10 +31,11 @@ export default function ProjectCard({
 }) {
   return (
     <motion.article
-      className={`card-interactive glass-panel rounded-3xl flex flex-col justify-between transition-all duration-300 relative text-left ${
+      id={`project-${project.id}`}
+      className={`card-interactive glass-panel rounded-3xl flex flex-col justify-between transition-all duration-300 relative text-left group overflow-hidden scroll-mt-28 ${
         project.featured
-          ? "md:col-span-2 p-8 sm:p-12 border border-[var(--accent-from)]/40 shadow-2xl space-y-7"
-          : "p-8 sm:p-10 border border-[var(--border-glass)] shadow-md space-y-7"
+          ? "md:col-span-2 p-7 sm:p-10 border border-[var(--accent-from)]/40 shadow-2xl space-y-7"
+          : "p-7 sm:p-9 border border-[var(--border-glass)] shadow-md space-y-7"
       }`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -46,12 +50,46 @@ export default function ProjectCard({
           </span>
 
           {project.featured && (
-            <span className="inline-flex items-center gap-1.5 font-mono text-xs sm:text-sm px-4 py-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 text-amber-500 dark:text-amber-400 font-bold shadow-xs">
+            <span className="inline-flex items-center gap-1.5 font-mono text-xs sm:text-sm px-4 py-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 text-amber-400 font-bold shadow-xs">
               <Sparkles size={14} aria-hidden="true" />
-              <span>Featured Project</span>
+              <span>Flagship Project</span>
             </span>
           )}
         </div>
+
+        {/* Visual Preview Screenshot Frame */}
+        {project.image && (
+          <div className="rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--bg)] shadow-md group-hover:border-[var(--accent-from)]/40 transition-colors">
+            {/* Terminal Window Header Bar */}
+            <div className="flex items-center justify-between px-4 py-2.5 border-b border-[var(--border)] bg-[var(--surface)] text-xs font-mono">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#ef4444]/80 inline-block" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#eab308]/80 inline-block" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e]/80 inline-block" />
+                <span className="text-[var(--text-muted)] ml-2 text-[11px]">
+                  {project.id}.app
+                </span>
+              </div>
+              <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                preview
+              </span>
+            </div>
+
+            {/* Next.js Optimized Image with Hover Zoom */}
+            <div className="relative aspect-video w-full overflow-hidden bg-[var(--bg-subtle)]">
+              <Image
+                src={project.image}
+                alt={project.imageAlt || `${project.title} Interface Preview`}
+                width={1200}
+                height={675}
+                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+              />
+            </div>
+          </div>
+        )}
 
         {/* Project Title */}
         <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight leading-snug">
@@ -94,7 +132,7 @@ export default function ProjectCard({
                   <Terminal size={15} className="text-emerald-500" />
                   <span>$ git diff results.md</span>
                 </div>
-                <span className="text-amber-500 font-semibold bg-amber-500/10 px-3 py-1 rounded text-xs flex items-center gap-1.5">
+                <span className="text-amber-400 font-semibold bg-amber-500/10 px-3 py-1 rounded text-xs flex items-center gap-1.5">
                   <ShieldAlert size={13} />
                   <span>Honest Evaluation</span>
                 </span>
@@ -121,18 +159,20 @@ export default function ProjectCard({
         )}
       </div>
 
-      {/* Action Links */}
+      {/* Action Links with Terminal Cursor Hover Motif */}
       <div className="pt-6 flex flex-wrap items-center justify-start gap-4 border-t border-[var(--border)]/70 mt-6">
         {project.githubUrl && (
           <a
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 font-mono text-sm px-5 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-all shadow-xs"
+            className="terminal-btn group inline-flex items-center gap-2.5 font-mono text-sm px-5 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-all shadow-xs"
             aria-label={`${project.title} Source Code on GitHub`}
           >
+            <span className="terminal-prompt-prefix font-mono font-bold select-none text-[var(--accent-from)]">❯</span>
             <GithubIcon size={17} aria-hidden="true" />
             <span>GitHub</span>
+            <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-from)]">▍</span>
           </a>
         )}
         {project.liveUrl && (
@@ -140,15 +180,17 @@ export default function ProjectCard({
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 font-mono text-sm px-5 py-3 rounded-xl text-[#0B0E14] font-semibold transition-all hover:scale-105 active:scale-95 shadow-md shadow-[var(--accent-from)]/20"
+            className="terminal-btn group inline-flex items-center gap-2.5 font-mono text-sm px-5 py-3 rounded-xl text-[#0B0E14] font-semibold transition-all hover:scale-105 active:scale-95 shadow-md shadow-[var(--accent-from)]/20"
             style={{
               background:
                 "linear-gradient(135deg, var(--accent-from), var(--accent-via))",
             }}
             aria-label={`${project.title} Live Application`}
           >
+            <span className="terminal-prompt-prefix font-mono font-bold select-none text-[#0B0E14]">❯</span>
             <ExternalLink size={16} aria-hidden="true" />
             <span>Live Demo</span>
+            <span className="terminal-cursor-indicator font-mono font-bold select-none text-[#0B0E14]">▍</span>
           </a>
         )}
       </div>
