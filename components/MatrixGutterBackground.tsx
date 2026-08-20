@@ -47,7 +47,7 @@ export default function MatrixGutterBackground() {
         lastFrameTime = currentTime - (elapsed % fpsInterval);
 
         // Fade previous frame
-        ctx.fillStyle = "rgba(11, 15, 25, 0.1)";
+        ctx.fillStyle = "rgba(8, 9, 14, 0.12)";
         ctx.fillRect(0, 0, width, height);
 
         ctx.font = `${fontSize}px var(--font-jetbrains-mono), monospace`;
@@ -57,11 +57,13 @@ export default function MatrixGutterBackground() {
           const x = i * 24 + 6;
           const y = drops[i] * 16;
 
-          // Glowing leading char vs dim trailing chars
+          // Glowing leading char vs dim trailing chars in Emerald Matrix theme
           if (Math.random() > 0.88) {
-            ctx.fillStyle = "rgba(45, 212, 191, 0.4)"; // Accent teal
+            ctx.fillStyle = "rgba(132, 204, 22, 0.6)"; // Electric Lime tip
+          } else if (Math.random() > 0.5) {
+            ctx.fillStyle = "rgba(16, 185, 129, 0.38)"; // Neon Mint
           } else {
-            ctx.fillStyle = "rgba(56, 189, 248, 0.16)"; // Sky blue dim
+            ctx.fillStyle = "rgba(6, 182, 212, 0.2)"; // Cyber Teal stream
           }
 
           ctx.fillText(text, x, y);

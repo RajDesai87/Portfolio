@@ -166,13 +166,13 @@ export default function ProjectCard({
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="terminal-btn group inline-flex items-center gap-2.5 font-mono text-sm px-5 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-all shadow-xs"
+            className="btn-ghost-luminous terminal-btn group inline-flex items-center gap-2.5 font-mono text-sm px-5 py-2.5 rounded-xl transition-all cursor-pointer"
             aria-label={`${project.title} Source Code on GitHub`}
           >
             <span className="terminal-prompt-prefix font-mono font-bold select-none text-[var(--accent-from)]">❯</span>
-            <GithubIcon size={17} aria-hidden="true" />
+            <GithubIcon size={16} aria-hidden="true" />
             <span>GitHub</span>
-            <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-from)]">▍</span>
+            <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-via)]">▍</span>
           </a>
         )}
         {project.liveUrl && (
@@ -180,17 +180,13 @@ export default function ProjectCard({
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="terminal-btn group inline-flex items-center gap-2.5 font-mono text-sm px-5 py-3 rounded-xl text-[#0B0E14] font-semibold transition-all hover:scale-105 active:scale-95 shadow-md shadow-[var(--accent-from)]/20"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--accent-from), var(--accent-via))",
-            }}
+            className="btn-primary-gradient terminal-btn group inline-flex items-center gap-2.5 font-mono text-sm px-5 py-2.5 rounded-xl text-[#06080d] cursor-pointer"
             aria-label={`${project.title} Live Application`}
           >
-            <span className="terminal-prompt-prefix font-mono font-bold select-none text-[#0B0E14]">❯</span>
+            <span className="terminal-prompt-prefix font-mono font-bold select-none text-[#06080d]">❯</span>
             <ExternalLink size={16} aria-hidden="true" />
             <span>Live Demo</span>
-            <span className="terminal-cursor-indicator font-mono font-bold select-none text-[#0B0E14]">▍</span>
+            <span className="terminal-cursor-indicator font-mono font-bold select-none text-[#06080d]">▍</span>
           </a>
         )}
       </div>

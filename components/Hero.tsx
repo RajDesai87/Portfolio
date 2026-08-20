@@ -154,7 +154,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Centered Large CTA Buttons with Terminal Cursor Hover Motif */}
+          {/* Centered Large CTA Buttons with Dynamic Gradient & Terminal Cursor Hover Motif */}
           <motion.div
             variants={itemVariants}
             className="pt-6 flex flex-wrap items-center justify-center gap-5"
@@ -162,16 +162,12 @@ export default function Hero() {
             <button
               type="button"
               onClick={handleScrollToProjects}
-              className="terminal-btn group inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 rounded-2xl font-bold text-base text-[#0B0E14] transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-xl shadow-[var(--accent-from)]/25 cursor-pointer"
-              style={{
-                background:
-                  "linear-gradient(135deg, var(--accent-from), var(--accent-via), var(--accent-to))",
-              }}
+              className="btn-primary-gradient terminal-btn group inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 rounded-2xl text-base cursor-pointer"
             >
-              <span className="terminal-prompt-prefix font-mono font-bold select-none">❯</span>
+              <span className="terminal-prompt-prefix font-mono font-bold select-none text-[#06080d]">❯</span>
               <span>View Projects</span>
-              <span className="terminal-cursor-indicator font-mono font-bold select-none">▍</span>
-              <ArrowRight size={18} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
+              <span className="terminal-cursor-indicator font-mono font-bold select-none text-[#06080d]">▍</span>
+              <ArrowRight size={18} aria-hidden="true" className="group-hover:translate-x-1.5 transition-transform" />
             </button>
 
             {/* Resume Link Opening in New Tab */}
@@ -179,16 +175,16 @@ export default function Hero() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="terminal-btn group inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 rounded-2xl font-bold text-base border border-[var(--border-glass)] bg-[var(--surface-glass)] text-[var(--text-primary)] hover:border-[var(--accent-from)] hover:text-[var(--accent-from)] backdrop-blur-xl transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-md"
+              className="btn-ghost-luminous terminal-btn group inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 rounded-2xl font-bold text-base cursor-pointer"
             >
               <span className="terminal-prompt-prefix font-mono font-bold select-none text-[var(--accent-from)]">❯</span>
               <span>View Resume</span>
-              <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-from)]">▍</span>
+              <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-via)]">▍</span>
               <ExternalLink size={18} aria-hidden="true" className="group-hover:translate-y-[-2px] group-hover:translate-x-[2px] transition-transform" />
             </a>
           </motion.div>
 
-          {/* Large Social Links with Generous Spacing */}
+          {/* Large Social Links with Generous Spacing and Dynamic Glow Rings */}
           <motion.div
             variants={itemVariants}
             className="pt-4 flex items-center justify-center gap-4 sm:gap-5"
@@ -197,7 +193,7 @@ export default function Hero() {
               href="https://github.com/RajDesai87"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 rounded-2xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--surface-glass)] border border-[var(--border-glass)] hover:border-[var(--accent-from)] transition-all duration-200 shadow-md hover:scale-105"
+              className="btn-icon-interactive p-4 rounded-2xl shadow-md"
               aria-label="GitHub Profile"
             >
               <GithubIcon size={22} />
@@ -206,14 +202,14 @@ export default function Hero() {
               href="https://www.linkedin.com/in/raj-desai132"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 rounded-2xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--surface-glass)] border border-[var(--border-glass)] hover:border-[var(--accent-from)] transition-all duration-200 shadow-md hover:scale-105"
+              className="btn-icon-interactive p-4 rounded-2xl shadow-md"
               aria-label="LinkedIn Profile"
             >
               <LinkedinIcon size={22} />
             </a>
             <a
               href="mailto:rajgpdesai2007@gmail.com"
-              className="p-4 rounded-2xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--surface-glass)] border border-[var(--border-glass)] hover:border-[var(--accent-from)] transition-all duration-200 shadow-md hover:scale-105"
+              className="btn-icon-interactive p-4 rounded-2xl shadow-md"
               aria-label="Email Raj Desai"
             >
               <Mail size={22} />

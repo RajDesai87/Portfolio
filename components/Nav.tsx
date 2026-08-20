@@ -59,8 +59,8 @@ export default function Nav() {
       <div
         className={`w-full max-w-5xl mx-auto pointer-events-auto transition-all duration-300 ${
           scrolled
-            ? "glass-panel sm:rounded-2xl md:rounded-full shadow-2xl shadow-black/10 px-6 sm:px-8 py-3.5 sm:py-4 border border-[var(--border-glass)]"
-            : "bg-[var(--surface)]/85 sm:rounded-2xl md:rounded-full backdrop-blur-md px-6 sm:px-8 py-3.5 sm:py-4 border border-[var(--border)] shadow-md"
+            ? "glass-panel sm:rounded-2xl md:rounded-full shadow-2xl shadow-black/20 px-5 sm:px-7 py-3 sm:py-3.5 border border-[var(--border-glass)]"
+            : "bg-[var(--surface)]/90 sm:rounded-2xl md:rounded-full backdrop-blur-md px-5 sm:px-7 py-3 sm:py-3.5 border border-[var(--border)] shadow-md"
         }`}
       >
         <nav className="flex items-center justify-between" aria-label="Main navigation">
@@ -72,11 +72,11 @@ export default function Nav() {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="group flex items-center gap-3 font-mono text-sm sm:text-base font-semibold tracking-tight transition-transform active:scale-95"
+            className="group flex items-center gap-2.5 font-mono text-sm sm:text-base font-semibold tracking-tight transition-transform active:scale-95"
             aria-label="Raj Desai - Home"
           >
-            <div className="w-9 h-9 rounded-xl bg-[var(--surface-hover)] border border-[var(--border)] flex items-center justify-center text-[var(--accent-from)] group-hover:border-[var(--accent-from)] transition-colors shadow-sm">
-              <Terminal size={17} />
+            <div className="w-8 h-8 rounded-xl bg-[var(--surface-hover)] border border-[var(--border)] flex items-center justify-center text-[var(--accent-from)] group-hover:border-[var(--accent-from)] group-hover:shadow-[0_0_12px_var(--accent-glow)] transition-all shadow-sm">
+              <Terminal size={16} />
             </div>
             <span className="font-bold">
               <span className="gradient-text">raj@desai</span>
@@ -85,7 +85,7 @@ export default function Nav() {
           </a>
 
           {/* Centered Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-1.5">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               const isActive = active === id;
@@ -97,17 +97,17 @@ export default function Nav() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`group relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 terminal-btn ${
+                  className={`group relative px-3.5 py-1.5 text-sm font-medium rounded-full transition-all duration-200 terminal-btn ${
                     isActive
                       ? "text-[var(--text-primary)] font-semibold"
                       : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]"
                   }`}
                 >
-                  <span className="terminal-prompt-prefix text-[var(--accent-from)] font-mono text-xs mr-1 select-none font-bold">❯</span>
+                  <span className="terminal-prompt-prefix text-[var(--accent-from)] font-mono text-xs mr-0.5 select-none font-bold">❯</span>
                   <span>{link.label}</span>
                   {isActive && (
                     <span
-                      className="absolute inset-0 rounded-full -z-10 bg-gradient-to-r from-[var(--accent-from)]/15 via-[var(--accent-via)]/15 to-[var(--accent-to)]/15 border border-[var(--accent-from)]/35 shadow-xs"
+                      className="absolute inset-0 rounded-full -z-10 bg-gradient-to-r from-[var(--accent-from)]/20 via-[var(--accent-via)]/20 to-[var(--accent-to)]/20 border border-[var(--accent-from)]/50 shadow-sm"
                     />
                   )}
                 </a>
@@ -116,17 +116,17 @@ export default function Nav() {
           </div>
 
           {/* Right Controls */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             {/* Terminal Status Tag */}
-            <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-3 py-1.5 rounded-full select-none">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="hidden sm:flex items-center gap-1.5 font-mono text-[11px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-3 py-1.5 rounded-full select-none shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>bash</span>
             </div>
 
             {/* Mobile hamburger */}
             <button
               type="button"
-              className="md:hidden p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--surface)] border border-[var(--border)] transition-colors"
+              className="md:hidden p-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--surface)] border border-[var(--border)] transition-colors"
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
@@ -138,7 +138,7 @@ export default function Nav() {
 
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-[var(--border)] flex flex-col gap-1.5 text-center">
+          <div className="md:hidden mt-3 pt-3 border-t border-[var(--border)] flex flex-col gap-1 text-center">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               const isActive = active === id;
@@ -150,9 +150,9 @@ export default function Nav() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+                  className={`px-4 py-2 text-sm font-medium rounded-xl transition-colors ${
                     isActive
-                      ? "text-[var(--text-primary)] font-semibold bg-[var(--surface-hover)] border border-[var(--accent-from)]/30"
+                      ? "text-[var(--text-primary)] font-semibold bg-[var(--accent-tint)] border border-[var(--accent-from)]/40"
                       : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]"
                   }`}
                 >
@@ -166,3 +166,4 @@ export default function Nav() {
     </header>
   );
 }
+

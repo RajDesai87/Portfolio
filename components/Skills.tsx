@@ -148,14 +148,14 @@ export default function Skills() {
 
         {/* Centered View Mode Switcher */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-[var(--bg)] p-2 rounded-2xl border border-[var(--border)] shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-[var(--bg)] p-1.5 rounded-2xl border border-[var(--border)] shadow-sm">
             <button
               type="button"
               onClick={() => setViewMode("json")}
-              className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-mono transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-mono transition-all cursor-pointer ${
                 viewMode === "json"
-                  ? "bg-[var(--surface)] text-[var(--accent-from)] font-bold shadow-sm border border-[var(--border)]"
-                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] font-medium"
+                  ? "bg-[var(--surface)] text-[var(--accent-from)] font-bold shadow-md border border-[var(--accent-from)]/40"
+                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] font-medium"
               }`}
             >
               <Code2 size={16} />
@@ -164,10 +164,10 @@ export default function Skills() {
             <button
               type="button"
               onClick={() => setViewMode("visual")}
-              className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-mono transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-mono transition-all cursor-pointer ${
                 viewMode === "visual"
-                  ? "bg-[var(--surface)] text-[var(--accent-from)] font-bold shadow-sm border border-[var(--border)]"
-                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] font-medium"
+                  ? "bg-[var(--surface)] text-[var(--accent-from)] font-bold shadow-md border border-[var(--accent-from)]/40"
+                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] font-medium"
               }`}
             >
               <LayoutGrid size={16} />
@@ -179,13 +179,13 @@ export default function Skills() {
         {/* View Mode 1: Syntax Highlighted JSON Code Block */}
         {viewMode === "json" && (
           <motion.div
-            className="w-full max-w-3xl mx-auto bg-[var(--bg)] border border-[var(--border)] rounded-3xl overflow-hidden shadow-2xl text-left"
+            className="w-full max-w-3xl mx-auto bg-[var(--bg)] border border-[var(--border)] rounded-3xl overflow-hidden shadow-2xl text-left hover:border-[var(--accent-from)]/40 transition-colors"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
           >
             {/* Terminal Window Header Bar */}
-            <div className="flex items-center justify-between px-7 py-4.5 border-b border-[var(--border)] bg-[var(--surface)]">
+            <div className="flex items-center justify-between px-7 py-4 border-b border-[var(--border)] bg-[var(--surface)]">
               <div className="flex items-center gap-2.5">
                 <span className="w-3.5 h-3.5 rounded-full bg-[#ef4444]/80 inline-block" aria-hidden="true" />
                 <span className="w-3.5 h-3.5 rounded-full bg-[#eab308]/80 inline-block" aria-hidden="true" />
@@ -197,7 +197,7 @@ export default function Skills() {
               <button
                 type="button"
                 onClick={handleCopyJson}
-                className="terminal-btn group inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 py-2 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-colors cursor-pointer"
+                className="btn-ghost-luminous terminal-btn group inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 py-2 rounded-xl transition-all cursor-pointer"
                 aria-label="Copy JSON code"
               >
                 {copied ? (
@@ -210,7 +210,7 @@ export default function Skills() {
                     <span className="terminal-prompt-prefix text-[var(--accent-from)] font-bold">❯</span>
                     <Copy size={14} />
                     <span>Copy JSON</span>
-                    <span className="terminal-cursor-indicator text-[var(--accent-from)] font-bold">▍</span>
+                    <span className="terminal-cursor-indicator text-[var(--accent-via)] font-bold">▍</span>
                   </>
                 )}
               </button>

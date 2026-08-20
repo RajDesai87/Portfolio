@@ -115,16 +115,12 @@ export default function Contact() {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <a
                 href={`mailto:${PRIMARY_EMAIL}`}
-                className="terminal-btn group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-[#0B0E14] shadow-xl shadow-[var(--accent-from)]/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
-                style={{
-                  background:
-                    "linear-gradient(135deg, var(--accent-from), var(--accent-via), var(--accent-to))",
-                }}
+                className="btn-primary-gradient terminal-btn group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl text-base cursor-pointer"
               >
-                <span className="terminal-prompt-prefix font-mono font-bold select-none text-[#0B0E14]">❯</span>
+                <span className="terminal-prompt-prefix font-mono font-bold select-none text-[#06080d]">❯</span>
                 <Send size={18} />
                 <span>Send Email</span>
-                <span className="terminal-cursor-indicator font-mono font-bold select-none text-[#0B0E14]">▍</span>
+                <span className="terminal-cursor-indicator font-mono font-bold select-none text-[#06080d]">▍</span>
               </a>
 
               {/* View Resume in new tab */}
@@ -132,12 +128,12 @@ export default function Contact() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="terminal-btn group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-base border border-[var(--border)] bg-[var(--bg)] text-[var(--text-primary)] hover:border-[var(--accent-from)] hover:text-[var(--accent-from)] transition-all shadow-sm cursor-pointer"
+                className="btn-ghost-luminous terminal-btn group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-base cursor-pointer"
               >
                 <span className="terminal-prompt-prefix font-mono font-bold select-none text-[var(--accent-from)]">❯</span>
                 <ExternalLink size={18} />
                 <span>View Resume</span>
-                <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-from)]">▍</span>
+                <span className="terminal-cursor-indicator font-mono font-bold select-none text-[var(--accent-via)]">▍</span>
               </a>
             </div>
           </motion.div>
@@ -148,7 +144,7 @@ export default function Contact() {
               return (
                 <motion.div
                   key={item.label}
-                  className="card-interactive glass-panel rounded-3xl p-6 sm:p-7 border border-[var(--border)] hover:border-[var(--accent-from)]/60 transition-all flex items-center justify-between shadow-sm group"
+                  className="card-interactive glass-panel rounded-3xl p-6 sm:p-7 border border-[var(--border)] hover:border-[var(--accent-from)] transition-all flex items-center justify-between shadow-sm group"
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
@@ -189,7 +185,7 @@ export default function Contact() {
                       <button
                         type="button"
                         onClick={handleCopyEmail}
-                        className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] hover:bg-[var(--accent-tint)] transition-all cursor-pointer"
                         aria-label="Copy email address"
                       >
                         {copied ? (
@@ -210,7 +206,7 @@ export default function Contact() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-xl text-[var(--text-muted)] group-hover:text-[var(--text-primary)] group-hover:bg-[var(--bg)] transition-colors"
+                        className="p-3 rounded-xl text-[var(--text-muted)] group-hover:text-[var(--text-primary)] group-hover:bg-[var(--accent-tint)] group-hover:border-[var(--accent-from)]/40 transition-all border border-transparent"
                         aria-label={`Open ${item.label} in new tab`}
                       >
                         <ArrowUpRight size={20} />

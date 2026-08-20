@@ -37,7 +37,7 @@ export default function Footer() {
             href="https://github.com/RajDesai87"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-2xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--bg)] border border-[var(--border)] hover:border-[var(--accent-from)] transition-all shadow-xs"
+            className="btn-icon-interactive p-3 rounded-2xl shadow-xs"
             aria-label="Raj Desai on GitHub (opens in new tab)"
           >
             <GithubIcon size={18} />
@@ -46,14 +46,14 @@ export default function Footer() {
             href="https://www.linkedin.com/in/raj-desai132"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-2xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--bg)] border border-[var(--border)] hover:border-[var(--accent-from)] transition-all shadow-xs"
+            className="btn-icon-interactive p-3 rounded-2xl shadow-xs"
             aria-label="Raj Desai on LinkedIn (opens in new tab)"
           >
             <LinkedinIcon size={18} />
           </a>
           <a
             href="mailto:rajgpdesai2007@gmail.com"
-            className="p-3 rounded-2xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--bg)] border border-[var(--border)] hover:border-[var(--accent-from)] transition-all shadow-xs"
+            className="btn-icon-interactive p-3 rounded-2xl shadow-xs"
             aria-label="Email Raj Desai"
           >
             <Mail size={18} />

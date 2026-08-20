@@ -138,13 +138,13 @@ export default function GitHubActivityWidget() {
           href="https://github.com/RajDesai87"
           target="_blank"
           rel="noopener noreferrer"
-          className="terminal-btn group w-full flex items-center justify-between px-3 py-2 rounded-xl bg-[var(--surface-hover)] border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-from)] transition-all"
+          className="btn-ghost-luminous terminal-btn group w-full flex items-center justify-between px-3 py-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all cursor-pointer"
         >
           <div className="flex items-center gap-2">
             <GithubIcon size={14} className="text-[var(--text-primary)]" />
             <span className="text-[11px] font-semibold">@RajDesai87</span>
           </div>
-          <span className="terminal-cursor-indicator text-[var(--accent-from)] font-bold">▍</span>
+          <span className="terminal-cursor-indicator text-[var(--accent-via)] font-bold">▍</span>
           <ExternalLink size={12} className="text-[var(--text-muted)] group-hover:text-[var(--text-primary)]" />
         </a>
       </div>
