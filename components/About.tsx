@@ -78,7 +78,7 @@ export default function About() {
           className="w-full max-w-3xl mx-auto glass-panel rounded-3xl p-8 sm:p-12 md:p-14 border border-[var(--border-glass)] shadow-2xl relative space-y-6 text-left mb-12 sm:mb-16"
         >
           <p className="text-[var(--text-primary)] text-base sm:text-xl leading-relaxed sm:leading-9 font-medium">
-            I am a 3rd-year Computer Science Engineering student (GPA 9.07/10) focused on backend development with Python, Django REST Framework, Flask, PostgreSQL, MySQL, Redis, and REST APIs.
+            I am a 3rd-year Computer Science Engineering student focused on backend development with Python, Django REST Framework, Flask, PostgreSQL, MySQL, Redis, and REST APIs.
           </p>
           <p className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed sm:leading-8">
             My work revolves around building secure authentication systems (JWT, OAuth 2.0), orchestrating asynchronous task processing queues with Celery, integrating LLM/RAG vector search pipelines, and architecting modular multi-tier backend architectures.

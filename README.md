@@ -63,7 +63,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 │   ├── Skills.tsx           # Syntax-highlighted JSON code block with line reveal
 │   ├── ProjectCard.tsx      # Project card with hover glow & metric diff callout
 │   ├── Projects.tsx         # Responsive grid with featured Stock RAG project
-│   ├── Education.tsx        # Degree information with GPA & timeline badges
+│   ├── Education.tsx        # Degree information & timeline badges
 │   ├── Certifications.tsx   # Verified Coursera credential badges
 │   ├── Contact.tsx          # Direct mailto, copy-to-clipboard email, social links
 │   └── Footer.tsx           # Minimal footer with `$ exit` command

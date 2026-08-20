@@ -64,12 +64,12 @@ export default function Education() {
               </div>
             </div>
 
-            {/* GPA Spotlight Badge */}
+            {/* Academic Status Spotlight Badge */}
             <div className="flex items-center gap-4 self-start md:self-auto bg-[var(--bg)] px-6 py-4 rounded-2xl border border-[var(--border)] shadow-sm">
               <div>
-                <span className="font-mono text-xs text-[var(--text-muted)] block uppercase font-semibold">CUMULATIVE GPA</span>
-                <span className="font-display text-3xl font-extrabold gradient-text">
-                  9.07 <span className="text-sm text-[var(--text-secondary)] font-normal">/ 10</span>
+                <span className="font-mono text-xs text-[var(--text-muted)] block uppercase font-semibold">ACADEMIC STATUS</span>
+                <span className="font-display text-2xl font-extrabold text-[var(--text-primary)]">
+                  3rd Year <span className="text-sm text-[var(--text-secondary)] font-normal">/ Active</span>
                 </span>
               </div>
               <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-500 font-bold">
@@ -88,7 +88,7 @@ export default function Education() {
               <span>Currently in 5th Semester (3rd Year)</span>
             </span>
             <span className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold">
-              <span>GPA: 9.07 / 10</span>
+              <span>Full-Time Degree</span>
             </span>
           </div>
         </motion.div>

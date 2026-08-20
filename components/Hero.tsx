@@ -150,7 +150,7 @@ export default function Hero() {
             </span>
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold shadow-sm">
               <GraduationCap size={17} />
-              <span>GPA: 9.07 / 10 • 3rd Year CS</span>
+              <span>3rd Year Computer Science</span>
             </span>
           </motion.div>
 
